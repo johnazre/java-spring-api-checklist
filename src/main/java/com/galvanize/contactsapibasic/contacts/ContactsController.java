@@ -12,14 +12,14 @@ import java.util.List;
 public class ContactsController {
 
     @Autowired
-    private final ContactsRepository contactsRepository;
+    private final ContactsService contactsService;
 
-    public ContactsController(ContactsRepository contactsRepository) {
-        this.contactsRepository = contactsRepository;
+    public ContactsController(ContactsService contactsService) {
+        this.contactsService = contactsService;
     }
 
     @GetMapping
     public List<Contact> getAllContacts() {
-        return this.contactsRepository.findAll();
+        return this.contactsService.getAllContacts();
     }
 }
