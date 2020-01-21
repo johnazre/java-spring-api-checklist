@@ -47,7 +47,11 @@ This checklist will help you build a basic Spring API
     * At the top of the controller class, [add the `@Autowired` annotation](https://github.com/johnazre/java-spring-api-checklist/blob/5a91585eb212b111e6c0ca5261af80a507566980/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsService.java#L11) 
     and [declare an instance of your repository interface](https://github.com/johnazre/java-spring-api-checklist/blob/5a91585eb212b111e6c0ca5261af80a507566980/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsService.java#L12).
     * [Create a constructor that instantiates the injected repository interface.](https://github.com/johnazre/java-spring-api-checklist/blob/5a91585eb212b111e6c0ca5261af80a507566980/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsService.java#L14)
-    
+    * Create all the methods you need to manage your data, i.e. getAll, getOne, addOne, updateOne, removeOne, etc.
+    * Things to keep in mind:
+        * Repository methods return a List, not an ArrayList.
+        * In the case where you are using a method to look for something, but don't know if it exists or not, you can
+         use the `Optional` type. Example: `Optional<Contact>`
  
 8. Within the [Controller class](https://github.com/johnazre/java-spring-api-checklist/blob/master/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java):
     * The following annotations go above the class declaration
