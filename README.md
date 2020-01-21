@@ -41,12 +41,18 @@ This checklist will help you build a basic Spring API
 6. Within the [Repository interface](https://github.com/johnazre/java-spring-api-checklist/blob/master/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsRepository.java), you should add that your repository extends "JpaRepository" and add a generic to
  the right of it that looks like `<TheModelName, TheDataTypeOfTheIdField>`.
  
-7. Within the [Service class]()
+7. Within the [Service class](https://github.com/johnazre/java-spring-api-checklist/blob/master/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsService.java)
+    * The following annotations go above the class declaration:
+        * `@Service` - To indicate that this class is a service
+    * At the top of the controller class, [add the `@Autowired` annotation](https://github.com/johnazre/java-spring-api-checklist/blob/5a91585eb212b111e6c0ca5261af80a507566980/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsService.java#L11) 
+    and [declare an instance of your repository interface](https://github.com/johnazre/java-spring-api-checklist/blob/5a91585eb212b111e6c0ca5261af80a507566980/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsService.java#L12).
+    * [Create a constructor that instantiates the injected repository interface.](https://github.com/johnazre/java-spring-api-checklist/blob/5a91585eb212b111e6c0ca5261af80a507566980/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsService.java#L14)
+    
  
 8. Within the [Controller class](https://github.com/johnazre/java-spring-api-checklist/blob/master/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java):
     * The following annotations go above the class declaration
         * `@RestController` - Indicates that this will be a controller file
         * `@RequestMapping("/contacts")` - Maps this controller to a route prefix, such as "/contacts", in this case.
     * At the top of the controller class, [add the `@Autowired` annotation](https://github.com/johnazre/java-spring-api-checklist/blob/64f53a7b1b78eb44de772ad9730a05057fde87f5/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java#L14) 
-    and [declare an instance of your repository interface](https://github.com/johnazre/java-spring-api-checklist/blob/64f53a7b1b78eb44de772ad9730a05057fde87f5/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java#L15).
-    * [Create a constructor that instantiates the injected repository interface.](https://github.com/johnazre/java-spring-api-checklist/blob/64f53a7b1b78eb44de772ad9730a05057fde87f5/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java#L17)
+    and [declare an instance of your service class](https://github.com/johnazre/java-spring-api-checklist/blob/64f53a7b1b78eb44de772ad9730a05057fde87f5/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java#L15).
+    * [Create a constructor that instantiates the injected service class.](https://github.com/johnazre/java-spring-api-checklist/blob/64f53a7b1b78eb44de772ad9730a05057fde87f5/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java#L17)
