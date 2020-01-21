@@ -26,8 +26,14 @@ This checklist will help you build a basic Spring API
     * **Service Class** (ContactsServer, TodosService, etc.)
 
 5. Within the Model class, you should have the following things:
-|  Annotation |  Reason |
-|---|---|
-| @Entity  | asdf  |
-| @Table (name = "whatever")   |  asdfasdf |
-| @Data   | adsfasd  |
+    * The following annotations go above the class declaration
+        * @Entity - To indicate that this an entity in the database
+        * @Table (name = "whatever") - To indicate that a table should be created with the name of "whatever"
+        * @Data - To add Lombok functionality. Lombok will automatically generate getters and setters for each property.
+    * An empty constructor - We will talk about that later, but it has to do with serializing/deserializing JSON.
+    * A private id field of type "long". Should have the following annotations:
+        * @Id - To indicate that it is an "id" field
+        * @GeneratedValue (strategy = GenerationType.IDENTITY) - To indicate that ids should be generated for new data
+    * Private properties for the rest of the fields that this entity will have. These properties should have the
+     following annotations:
+        * @Column - To indicate that this should be a column in the table.

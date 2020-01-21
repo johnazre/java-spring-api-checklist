@@ -9,6 +9,8 @@ import javax.persistence.*;
 @Data
 public class Contact {
 
+    public Contact() {}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
