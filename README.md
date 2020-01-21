@@ -70,3 +70,18 @@ This checklist will help you build a basic Spring API
         * `@DeleteMapping`
         * URL prefixes can be added to these methods like this: `@GetMapping("/something")`
         * If no prefix is added, it will default to a route on the root prefix of the controller
+
+9. [Add the following code to the `application.properties` file](https://github.com/johnazre/java-spring-api-checklist/blob/master/src/main/resources/application.properties):
+```text
+spring.jpa.database=POSTGRESQL
+spring.datasource.platform=postgres
+spring.datasource.url=jdbc:postgresql://localhost:5432/your-database-name
+spring.datasource.username=postgres
+spring.datasource.password=root
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+```
+
+> NOTE: Make sure to change the username and password that corresponds to your database instance on your computer
