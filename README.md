@@ -60,3 +60,13 @@ This checklist will help you build a basic Spring API
     * At the top of the controller class, [add the `@Autowired` annotation](https://github.com/johnazre/java-spring-api-checklist/blob/64f53a7b1b78eb44de772ad9730a05057fde87f5/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java#L14) 
     and [declare an instance of your service class](https://github.com/johnazre/java-spring-api-checklist/blob/64f53a7b1b78eb44de772ad9730a05057fde87f5/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java#L15).
     * [Create a constructor that instantiates the injected service class.](https://github.com/johnazre/java-spring-api-checklist/blob/64f53a7b1b78eb44de772ad9730a05057fde87f5/src/main/java/com/galvanize/contactsapibasic/contacts/ContactsController.java#L17)
+    * Create all the route handler methods you need to manage your data, i.e. getAll, getOne, addOne, updateOne, removeOne, etc.
+    * To indicate which HTTP method this route will look for, use one of the following annotations above the method
+     declaration:
+        * `@GetMapping`
+        * `@PostMapping`
+        * `@PatchMapping`
+        * `@PutMapping`
+        * `@DeleteMapping`
+        * URL prefixes can be added to these methods like this: `@GetMapping("/something")`
+        * If no prefix is added, it will default to a route on the root prefix of the controller
