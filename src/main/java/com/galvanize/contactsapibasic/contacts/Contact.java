@@ -13,11 +13,23 @@ public class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private int id;
 
     @Column
-    String name;
+    private String name;
 
     @Column
-    String email;
+    private String email;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
