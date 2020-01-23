@@ -47,6 +47,7 @@ public class ContactsController {
 
     @DeleteMapping("/{id}")
     public String removeOneContact(@PathVariable int id) {
+        Contact contact = contactsService.getOneContact(id).orElseThrow(IllegalArgumentException::new);
         return contactsService.removeOneContact(id);
     }
 }
